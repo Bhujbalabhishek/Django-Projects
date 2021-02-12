@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="page-header">
+            <div style="text-align: center;"> 
+                <h4>Create New Post
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a></h4>
+            </div>
+        
+    </div>
+
+    <div style="text-align: center;">
+        <h4>Get serialized format in json
+        <a href="{% url 'post_serialize' %}">Serialized format</a></h4>
+    </div>
+    <hr>
+
+    <h1><a href="/">Posts</a></h1>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

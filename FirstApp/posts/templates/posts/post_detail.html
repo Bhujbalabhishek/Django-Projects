@@ -1,0 +1,22 @@
+{% extends 'posts/base.html' %}
+{% load cache %}
+{% block content %}
+
+    {% cache 500 post %}
+    <div>
+        <h2>{{ post.title }}</h2>
+                {% if post.date_posted %}
+            <div >
+                {{ post.date_posted }}
+            </div>
+        {% endif %}
+         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <hr>
+            <div>
+                <h3><p>{{ post.content|linebreaksbr }}</p></h3>
+            </div>
+            <hr>
+           
+    </div>
+    {% endcache %}
+{% endblock %}

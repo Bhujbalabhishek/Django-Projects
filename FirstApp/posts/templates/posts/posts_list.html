@@ -1,0 +1,21 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+    {% for post in posts %}
+        <div>
+            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+
+        {% if post.date_posted %}
+            <div >
+                {{ post.date_posted }}
+            </div>
+        {% endif %}
+            <hr>
+            <div>
+                <h3><p>{{ post.content|linebreaksbr }}</p></h3>
+            </div>
+            <hr>
+        </div>
+    {% endfor %}
+    
+{% endblock %}

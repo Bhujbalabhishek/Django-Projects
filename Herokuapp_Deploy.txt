@@ -1,0 +1,75 @@
+import django_heroku
+import dj_database_url
+from decouple import config
+
+
+
+'whitenoise.middleware.WhiteNoiseMiddleware',
+
+
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+django_heroku.settings(locals())
+
+
+
+steps=>
+
+git config --global user.name "Bhujbalabhishek"
+git config --global user.email "abhishekbhujbal76@gmail.com"
+git config --global push.default matching
+git config --global alias.co checkout
+git init
+
+$ mkdir ~/.ssh
+
+$ cd ~/.ssh
+
+$ pwd
+/c/Users/Abhisekh/.ssh
+
+$ ssh-keygen.exe
+
+$ ls
+id_rsa  id_rsa.pub
+
+$ cat id_rsa.pub
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCz2nMbPwiK2nbjv25o1Z+M4lZNflG5lgwzu1Ovpdm8ZaD15KWbY19hb0fUI7m6EOKi/Zw3Mg2B/YLSTjTmTC+RXPGm/OtXYkZSFRLlFbqEAxTBn6ZoQC9xfseoS6XQA/ExEXqKjQ4Ro+SQJSpJv3De7op5Hbi44coMBMy1qHOq6r+Tmie6D/vm+hHOSib52Tw6sy3q4isBIh/NgVzjuofZPayDsY7O9GbsmPeWyFypK8jXF4RK19sECz5Svv9bXNt4sTIHh78rjvU+VUifL7yJkehvnjA/MIN2QhBCkVAMu1fq2TUzqPOlOG0bBQFsbPU5hvmZAaDfR3QRhYaBrOvwdgo5sLpEElCn2tiCc8AWciUaf0nztpARdeRhybwVDsvHXKlV9OKQ8yvr8FvI8/TbYCrYZKo0rN1sL7wNyooMaPGQ5LkNyL+NAC5F7VWjaKzZgM3b4fD8qehZPwp6BCF3h7NC1jWPhPsov8XeaMteQ/4f30eLbjOTeQaWQbT+jJU= Abhisekh@Abhisekh-PC
+copy this key to your github account
+
+
+git remote add origin https://github.com/Bhujbalabhishek/Django-Blog.git
+
+git push -u --force origin master
+
+heroku --version
+
+pip install gunicorn
+
+pip install django-heroku
+
+pip install dj_database_url
+
+pip install python-decouple
+
+pip freeze
+
+added Procfile and requirements.txt
+
+git add .
+
+git commit -m "updated django-blog using heroku"
+
+git push
+
+heroku login
+
+heroku keys:add
+
+heroku create
+
+git push heroku master

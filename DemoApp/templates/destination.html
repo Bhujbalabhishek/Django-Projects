@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+	<!-- Destinations -->
+{% block destination %}
+	
+	<div class="destinations" id="destinations">
+		<div class="container">
+			<div class="row">
+				<div class="col text-center">
+					<div class="section_subtitle">simply amazing places</div>
+					<div class="section_title"><h2>Popular Destinations</h2></div>
+
+					{% if  not user.is_authenticated %}
+					<div class="section_title"><h4>To know the offers, Register First</h4></div>
+					{% endif %}
+				</div>
+			</div>
+			<div class="row destinations_row">
+				<div class="col">
+					<div class="destinations_container item_grid">
+
+							{% comment %} {% for dest in dests %} {% endcomment %}
+						<!-- Destination -->
+						<div class="destination item">
+							<div class="destination_image">
+								<img src="{{dest.img.url}}" alt="">
+							{% if dest.offer %}
+								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
+							{% endif %}
+							</div>
+							<div class="destination_content">
+								<div class="destination_title"><a href='{% url 'destination_detail' dest.id %}'> {{dest.name}} </a></div>
+								{% if user.is_authenticated %}
+									 <div class="destination_subtitle"><p>{{dest.desc}}.</p></div>
+									<div class="destination_price">From ${{dest.price}}</div>
+								{% endif %}
+
+							</div>
+						</div>
+							{% comment %} {% endfor %} {% endcomment %}
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+			
+{% endblock destination %}
